@@ -129,6 +129,7 @@ int WxDestroySDK(int index)
 
 int EnumWeChatProcess()
 {
+    clearAllSDK();
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     PROCESSENTRY32 pe32 = {sizeof(PROCESSENTRY32)};
     while (Process32Next(hSnapshot, &pe32)) {
